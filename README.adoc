@@ -86,3 +86,16 @@ ____
 ____
 password : password
 ____
+
+
+image::images/minio-login.png[]
+{blank}
+
+Let's create a minio bucket called warehouse :
+{blank}
+image::images/minio-createbucket1.png[]
+{blank}
+image::images/minio-createbucket2.png[]
+{blank}
+image::images/minio-createbucket3.png[]
+{blank}
