@@ -161,7 +161,7 @@ ____
 Name: fs.s3a.path.style.access | Value: true
 ____
 ____
-Name: fs.s3a.endpoint | Value: <ip adress of minio>:9000
+Name: fs.s3a.endpoint | Value: minio:9000
 ____
 ____
 Name: dremio.s3.compat | Value: true
@@ -172,31 +172,3 @@ ____
 image::images/minio-config3.png[]
 
 {blank}
-
-To get the ip adress of minio :
-
-[,console]
-----
-docker ps
-docker inspect minio
-----
-
-[,console]
-----
-          "Gateway": "172.18.0.1",
-          "IPAddress": "172.18.0.3",
-          "IPPrefixLen": 16,
-          "IPv6Gateway": "",
-          "GlobalIPv6Address": "",
-          "GlobalIPv6PrefixLen": 0,
-          "DriverOpts": null,
-          "DNSNames": [
-              "minio",
-              "c7392fca033c"
-          ]
-        }
-      }
-    }
-  }
-]
-----
