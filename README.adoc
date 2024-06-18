@@ -132,7 +132,7 @@ ____
 AWS Access Secret : password
 ____
 
-
+{blank}
 
 image::images/minio-config1.png[]
 
@@ -141,7 +141,11 @@ ____
 Enable compatibility mode : check it
 ____
 
+{blank}
+
 image::images/minio-config2.png[]
+
+{blank}
 
 In Source Setting -> Advanced Options :
 
@@ -157,12 +161,17 @@ ____
 Name: dremio.s3.compat | Value: true
 ____
 
+{blank}
+
 image::images/minio-config3.png[]
+
+{blank}
+
+To get the ip adress of minio :
 
 [,console]
 ----
 docker ps
-
 docker inspect minio
 ----
 
