@@ -131,6 +131,9 @@ ____
 ____
 AWS Access Secret : password
 ____
+____
+Encrypt connection : uncheck it
+____
 
 {blank}
 
@@ -139,6 +142,9 @@ image::images/minio-config1.png[]
 In Source Setting -> Advanced Options :
 ____
 Enable compatibility mode : check it
+____
+____
+Root Path : /warehouse
 ____
 
 {blank}
