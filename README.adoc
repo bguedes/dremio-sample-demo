@@ -1,0 +1,46 @@
+= Dremio simple demonstration
+'''
+
+Version : 1.0.0 + date : 2024/06/18 +
+
+'''
+
+image::https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWJpGaolEv5awjQ9F9IzI-uV5pBUrGNUnL-A&usqp=CAU[]
+
+
+== Introduction
+
+This github repository show a simple https://github.com/dremio/dremio-oss[Dremio OSS] usage demonstration.
+
+== Pre-requisites
+
+. Laptop with a Linux, Windows or Macbook.
+. A modern browser.
+. Wifi Internet connection.
+. Git installed.
+. https://www.docker.com/products/docker-desktop/[Docker Destop] or https://podman-desktop.io/[Podman Desktop] installed
+
+== Step 1: Get github project
+
+{blank}
+
+You can use the workshop project cloning this github repository : https://github.com/bguedes/dremio-sample-demo.git[Demo github repo]
+
+[,console]
+----
+git clone https://github.com/bguedes/dremio-sample-demo.git
+----
+
+== Step 2: Setup environment
+
+[,console]
+----
+docker pull alpine/k8s:1.27.13
+docker run -i -t alpine/k8s:1.27.13 bash
+----
+
+[,console]
+----
+podman pull alpine/k8s:1.27.13
+podman run -i -t alpine/k8s:1.27.13 bash
+----
