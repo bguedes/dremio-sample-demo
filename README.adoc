@@ -49,3 +49,11 @@ podman compose up dremio
 If everything goes well you should see the following result in your console:
 
 image::images/dremio-setup-ok.png[]
+
+Please signup to your http://localhost:9047/signup[dremio cluster] :
+
+image::images/dremio-signup.png[]
+
+After this step, you will get Dremio setup and running :
+
+image::images/dremio-after-signup.png[]
