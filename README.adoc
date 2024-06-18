@@ -108,3 +108,80 @@ image::images/minio-createbucket2.png[]
 image::images/minio-createbucket3.png[]
 
 {blank}
+
+=== Create a S3 Datasource
+
+Now that our minio is configured, we are going to create a S3 compatible datasource.
+On dremio UI choose 'Add source' :
+
+image::images/dremio-add-source-button.png[]
+
+Choose Amazon S3 data source from the list :
+
+image::images/dremio-adding-source.png[]
+
+In Source Setting -> General :
+
+____
+Name : minio
+____
+____
+AWS Access Key : admin
+____
+____
+AWS Access Secret : password
+____
+
+
+
+image::images/minio-config1.png[]
+
+In Source Setting -> Advanced Options :
+____
+Enable compatibility mode : check it
+____
+
+image::images/minio-config2.png[]
+
+In Source Setting -> Advanced Options :
+
+Add these properties :
+
+____
+Name: fs.s3a.path.style.access | Value: true
+____
+____
+Name: fs.s3a.endpoint | Value: <ip adress of minio>:9000
+____
+____
+Name: dremio.s3.compat | Value: true
+____
+
+image::images/minio-config3.png[]
+
+[,console]
+----
+docker ps
+
+docker inspect minio
+----
+
+[,console]
+----
+          "Gateway": "172.18.0.1",
+          "IPAddress": "172.18.0.3",
+          "IPPrefixLen": 16,
+          "IPv6Gateway": "",
+          "GlobalIPv6Address": "",
+          "GlobalIPv6PrefixLen": 0,
+          "DriverOpts": null,
+          "DNSNames": [
+              "minio",
+              "c7392fca033c"
+          ]
+        }
+      }
+    }
+  }
+]
+----
