@@ -5,7 +5,7 @@ Version : 1.0.0 + date : 2024/06/18 +
 
 '''
 
-image::https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWJpGaolEv5awjQ9F9IzI-uV5pBUrGNUnL-A&usqp=CAU[]
+image::https://www.dremio.com/wp-content/uploads/2023/08/5-use-cases-featured-image-443x239.png[]
 
 
 == Introduction
