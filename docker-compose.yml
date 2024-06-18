@@ -39,6 +39,17 @@ services:
       - DREMIO_JAVA_SERVER_EXTRA_OPTS=-Dpaths.dist=file:///opt/dremio/data/dist
     networks:
       dremio-docker-network:
+  # MongoDB
+  mongodb:
+    image: mongo:latest
+    container_name: mongodb
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: dremio
+    ports:
+      - "27017:27017"
+    networks:
+      dremio-docker-network:
   # Postgres
   postgres:
     image: postgres:latest
@@ -51,7 +62,6 @@ services:
       - "5435:5432"
     networks:
       dremio-docker-network:
-
   #Superset
   superset:
     image: alexmerced/dremio-superset

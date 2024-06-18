@@ -175,6 +175,8 @@ image::images/minio-config3.png[]
 
 == Step 3: Setup databases
 
+=== Postgres
+
 {blank}
 
 Let launch postgres instance :
@@ -217,4 +219,46 @@ INSERT INTO sales_data (sale_date, product_id, quantity, total_amount) VALUES
 ('2023-01-08', 108, 1, 180.00),
 ('2023-01-09', 109, 6, 900.00),
 ('2023-01-10', 110, 2, 220.00);
+----
+
+=== MongoDB
+
+{blank}
+
+Let launch mongodb instance :
+
+[,console]
+----
+docker-compose up mongodb
+----
+
+{blank}
+
+Let's connect to the database :
+
+[,console]
+----
+docker exec -it mongodb mongosh -u root -p dremio --authenticationDatabase admin
+----
+
+{blank}
+
+[,sql]
+----
+use productsDB;
+
+db.createCollection("products");
+
+db.products.insertMany([
+    { RecordID: 1, ProductID: 101, Category: "Category A", weight: 100, color: "red", DateRecorded: "2023-01-01" },
+    { RecordID: 2, ProductID: 102, Category: "Category B", weight: 150, color: "white", DateRecorded: "2023-01-02" },
+    { RecordID: 3, ProductID: 103, Category: "Category C", weight: 200, color: "blue", DateRecorded: "2023-01-03" },
+    { RecordID: 4, ProductID: 104, Category: "Category A", weight: 110, color: "magenta", DateRecorded: "2023-01-04" },
+    { RecordID: 5, ProductID: 105, Category: "Category B", weight: 120, color: "red", DateRecorded: "2023-01-05" },
+    { RecordID: 6, ProductID: 106, Category: "Category C", weight: 130, color: "yellow", DateRecorded: "2023-01-06" },
+    { RecordID: 7, ProductID: 107, Category: "Category A", weight: 140, color: "white", DateRecorded: "2023-01-07" },
+    { RecordID: 8, ProductID: 108, Category: "Category B", weight: 160, color: "brown", DateRecorded: "2023-01-08" },
+    { RecordID: 9, ProductID: 109, Category: "Category C", weight: 170, color: "black", DateRecorded: "2023-01-09" },
+    { RecordID: 10, ProductID: 110, Category: "Category A", weight: 180, color: "white", DateRecorded: "2023-01-10" }
+]);
 ----
