@@ -44,3 +44,8 @@ For podman desktop launch :
 ----
 podman compose up dremio
 ----
+
+
+If everything goes well you should see the following result in your console:
+
+image::images/dremio-setup-ok.png[]
