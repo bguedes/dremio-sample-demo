@@ -82,5 +82,7 @@ We need to setup minio for the demo, follow this http://localhost:9001/login[lin
 
 ____
 login : admin
+____
+____
 password : password
 ____
