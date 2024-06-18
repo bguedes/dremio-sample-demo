@@ -177,12 +177,16 @@ image::images/minio-config3.png[]
 
 {blank}
 
+Let launch postgres instance :
+
 [,console]
 ----
 docker-compose up postgres
 ----
 
 {blank}
+
+Let's connect to the database :
 
 [,console]
 ----
@@ -191,9 +195,16 @@ docker exec -it postgres psql -U myuser -d mydb
 
 {blank}
 
+Create table and populate it :
+
 [,sql]
 ----
-CREATE TABLE sales_data (sale_id SERIAL PRIMARY KEY, sale_date DATE NOT NULL, product_id INT NOT NULL, quantity INT NOT NULL, total_amount NUMERIC(10, 2) NOT NULL);
+CREATE TABLE sales_data (
+  sale_id SERIAL PRIMARY KEY,
+  sale_date DATE NOT NULL,
+  product_id INT NOT NULL,
+  quantity INT NOT NULL,
+  total_amount NUMERIC(10, 2) NOT NULL);
 
 INSERT INTO sales_data (sale_date, product_id, quantity, total_amount) VALUES
 ('2023-01-01', 101, 3, 450.00),
