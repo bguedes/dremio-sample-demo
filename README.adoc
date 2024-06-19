@@ -262,3 +262,56 @@ db.products.insertMany([
     { RecordID: 10, ProductID: 110, Category: "Category A", weight: 180, color: "white", DateRecorded: "2023-01-10" }
 ]);
 ----
+{blank}
+
+Postgres data source setup :
+
+____
+Name: sales
+____
+____
+Host: postgres
+____
+____
+Port: 5432
+____
+____
+Database Name : mydb
+____
+____
+Username : myuser
+____
+____
+Password : dremio
+____
+
+
+{blank}
+
+image::images/postgres-setup.png[]
+
+{blank}
+
+Mongodb data source setup :
+
+____
+Name: products
+____
+____
+Host: mongodb
+____
+____
+Port: 27017
+____
+____
+Username : root
+____
+____
+Password : dremio
+____
+
+{blank}
+
+image::images/mongodb-setup.png[]
+
+{blank}
