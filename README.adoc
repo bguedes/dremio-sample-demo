@@ -319,8 +319,6 @@ image::images/mongodb-setup.png[]
 
 {blank}
 
-{blank}
-
 == Step 4: Data virtualisation
 
 {blank}
