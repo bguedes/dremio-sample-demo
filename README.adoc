@@ -323,50 +323,50 @@ image::images/mongodb-setup.png[]
 
 {blank}
 
-image::images/create-space1[]
+image::images/create-space1.png[]
 
 {blank}
 
-image::images/create-space2[]
+image::images/create-space2.png[]
 
 {blank}
 
-image::images/dataviz1[]
+image::images/dataviz1.png[]
 
 {blank}
 
-image::images/dataviz2[]
+image::images/dataviz2.png[]
 
 {blank}
 
-image::images/dataviz3[]
+image::images/dataviz3.png[]
 
 {blank}
 
-image::images/dataviz4[]
+image::images/dataviz4.png[]
 
 {blank}
 
-image::images/dataviz5[]
+image::images/dataviz5.png[]
 
 {blank}
 
-image::images/dataviz6[]
+image::images/dataviz6.png[]
 
 {blank}
 
-image::images/dataviz7[]
+image::images/dataviz7.png[]
 
 {blank}
 
-image::images/dataviz8[]
+image::images/dataviz8.png[]
 
 {blank}
 
-image::images/dataviz9[]
+image::images/dataviz9.png[]
 
 {blank}
 
-image::images/dataviz10[]
+image::images/dataviz10.png[]
 
 {blank}
