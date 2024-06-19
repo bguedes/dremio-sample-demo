@@ -295,7 +295,7 @@ image::images/postgres-setup.png[]
 Mongodb data source setup :
 
 ____
-Name: products
+Name: products-catalog
 ____
 ____
 Host: mongodb
@@ -308,6 +308,9 @@ Username : root
 ____
 ____
 Password : dremio
+____
+____
+Authentication Database : admin
 ____
 
 {blank}
