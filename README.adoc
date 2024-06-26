@@ -370,3 +370,46 @@ image::images/dataviz9.png[]
 image::images/dataviz10.png[]
 
 {blank}
+
+== Step 5: Manipulating Iceberg Table
+
+[,sql]
+----
+-- Dropping Iceber Table
+drop table if exists minio.trips;
+
+-- Creating Iceber Table
+CREATE TABLE minio.trips (
+	ts BIGINT, 
+	uuid VARCHAR, 
+	rider VARCHAR,
+	driver VARCHAR,
+	fare FLOAT,
+	city VARCHAR
+) PARTITION BY(city);
+
+-- Populate the Iceberg Table
+insert into minio.trips values(1695159649087, '863fee31-8ddc-43e9-9b2a-363401dca1fa', 'rider-A', 'driver-K', 40.10, 'san_francisco');
+insert into minio.trips values(1695516137016, '214fee1f-0683-4eb9-8e04-e19afc9c6d2f', 'rider-F', 'driver-P', 24.50, 'sao_paulo');
+insert into minio.trips values(1695115999911, 'f26ceba0-421b-40ab-8423-b061dc258f81', 'rider-J', 'driver-T', 32.10, 'paris');
+
+-- Check the content
+SELECT * from minio.trips;
+
+-- Let's change the Partition by driver
+ALTER TABLE minio.trips DROP PARTITION FIELD city;
+ALTER TABLE minio.trips ADD PARTITION FIELD driver;
+
+-- Insert new datas
+insert into minio.trips values(1695159649087, '9eb8d6c2-08d0-4228-b126-13422159e07a', 'rider-C', 'driver-Q', 25.50, 'san_francisco');
+insert into minio.trips values(1695516137016, 'e25750a8-30f1-48bb-9f47-0bff2a1f8bbc', 'rider-G', 'driver-V', 10.50, 'sao_paulo');
+insert into minio.trips values(1695115999911, 'bb198f24-90f2-4b8a-8694-f0a58507e3f1', 'rider-H', 'driver-M', 24.30, 'paris');
+
+-- Check the content
+SELECT * from minio.trips;
+
+select * from TABLE(table_history('minio.trips' ))
+order by 1 desc;
+
+select * from minio.trips at timestamp '2024-06-26 22:19:53.729';
+----
