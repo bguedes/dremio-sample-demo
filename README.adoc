@@ -371,7 +371,11 @@ image::images/dataviz10.png[]
 
 {blank}
 
+{blank}
+
 == Step 5: Manipulating Iceberg Table
+
+{blank}
 
 [,sql]
 ----
