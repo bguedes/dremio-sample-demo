@@ -416,4 +416,14 @@ select * from TABLE(table_history('minio.trips' ))
 order by 1 desc;
 
 select * from minio.trips at timestamp '2024-06-26 22:19:53.729';
+
+-- Adding a column
+ALTER TABLE minio.trips ADD COLUMNS (currency VARCHAR);
+
+-- Insert new datas with currency values
+insert into minio.trips values(1695159649087, '491eb0eb-93f6-4f58-94e2-151d94459a57', 'rider-D', 'driver-F', 15.50, 'paris', 'EUR');
+insert into minio.trips values(1695516137016, '0be814c3-9e6e-40bb-bdb9-cc2da6a86bdb', 'rider-E', 'driver-G', 20.50, 'paris' , 'EUR');
+
+-- Dropping currency column
+ALTER TABLE minio.trips DROP COLUMN currency;
 ----
